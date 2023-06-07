@@ -72,7 +72,7 @@ func (r *Repository) Transfer(operation *model.Operation) error {
 	}
 	// дебит при пассивном балансе
 	if accountFrom.Status == "passive" {
-		if accountFrom.Balance == 0 {
+		if accountFrom.Balance == 0 || accountFrom.Balance < operation.Amount {
 			r.Logger.Error("insufficient balance")
 			tx.Rollback()
 			return errors.New("insufficient balance")
@@ -86,7 +86,7 @@ func (r *Repository) Transfer(operation *model.Operation) error {
 	}
 	// кредит при активном балансе
 	if accountTo.Status == "active" {
-		if accountTo.Balance == 0 {
+		if accountTo.Balance == 0 || accountTo.Balance < operation.Amount {
 			r.Logger.Error("insufficient balance")
 			tx.Rollback()
 			return errors.New("insufficient balance")

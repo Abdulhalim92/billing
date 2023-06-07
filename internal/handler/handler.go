@@ -60,7 +60,7 @@ func (h *Handler) CreateAccount(c *gin.Context) {
 }
 
 func (h *Handler) Transfer(c *gin.Context) {
-	time.Sleep(7 * time.Second)
+	time.Sleep(1 * time.Second)
 
 	var operation *model.Operation
 

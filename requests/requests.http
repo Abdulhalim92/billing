@@ -1,0 +1,8 @@
+POST http://localhost:8080/v1/transfer
+Content-Type: application/json
+
+{
+  "account_from":2,
+  "account_to":1,
+  "amount":10
+}
