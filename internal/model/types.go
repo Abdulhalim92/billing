@@ -14,7 +14,7 @@ type Account struct {
 }
 
 type Operation struct {
-	AccountFrom int     `json:"account_from" binding:"required"`
-	AccountTo   int     `json:"account_to" binding:"required"`
-	Amount      float64 `json:"amount" binding:"required" gorm:"type:numeric(10, 2);size:10"`
+	AccountFromID int     `json:"account_from" binding:"required"`
+	AccountToID   int     `json:"account_to" binding:"required"`
+	Amount        float64 `json:"amount" binding:"required" gorm:"type:numeric(10, 2);size:10"`
 }

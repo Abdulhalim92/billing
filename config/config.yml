@@ -7,7 +7,7 @@ db:
   driver: postgres
   host: localhost
   port: 5432
-  db_name:
+  db_name: billing_db
   user: postgres
   password: postgres
   sslmode: disable
