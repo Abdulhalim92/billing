@@ -9,7 +9,7 @@ variables:
   POSTGRES_USER: "postgres"
   POSTGRES_PASSWORD: "postgres"
   POSTGRES_DB: "billing_db"
-  POSTGRES_HOST: "localhost"
+  POSTGRES_HOST: "0.0.0.0"
   POSTGRES_PORT: "5432"
 
 before_script:
