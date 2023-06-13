@@ -12,8 +12,8 @@ type Config struct {
 }
 
 type ListenConn struct {
-	Host string `yaml:"host" env-default:"127.0.0.1"`
-	Port string `yaml:"port" env-default:"8080"`
+	Host string `yaml:"host" env-default:"-"`
+	Port string `yaml:"port" env-default:"-"`
 }
 
 type DbConn struct {

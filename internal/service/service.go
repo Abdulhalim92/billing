@@ -6,22 +6,19 @@ import (
 	"billing/logging"
 )
 
+//go:generate mockgen -source=service.go -destination=mocks/mock.go
+
+type Account interface {
+	CreateAccount(account *model.Account) (int, error)
+	Transfer(operation *model.Operation) error
+}
+
 type Service struct {
-	Repository *repository.Repository
-	Logger     *logging.Logger
+	Account
 }
 
 func NewService(rep *repository.Repository, log *logging.Logger) *Service {
 	return &Service{
-		Repository: rep,
-		Logger:     log,
+		Account: NewAccountService(rep, log),
 	}
-}
-
-func (s *Service) CreateAccount(account *model.Account) error {
-	return s.Repository.CreateAccount(account)
-}
-
-func (s *Service) Transfer(operation *model.Operation) error {
-	return s.Repository.Transfer(operation)
 }

@@ -6,7 +6,7 @@ import (
 
 type Account struct {
 	ID      int       `json:"-"`
-	Number  string    `json:"name"`
+	Number  string    `json:"number"`
 	Balance float64   `json:"balance" binding:"required" gorm:"type:numeric(10, 2);size:10"`
 	Status  string    `json:"status"`
 	Created time.Time `json:"-"`

@@ -1,11 +1,11 @@
 
 listen:
   host: localhost
-  port: 8080
+  port: 7020
 
 db:
   driver: postgres
-  host: db
+  host: localhost
   port: 5432
   db_name: billing_db
   user: postgres
